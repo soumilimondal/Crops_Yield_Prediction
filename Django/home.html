@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Crop Prediction</title>
+    <style>
+        body {
+            background-image: url(https://www.insurancejournal.com/wp-content/uploads/2014/01/crops.jpg);
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+         div.container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+<h1>
+    <font color="black">Crop Prediction</font>
+</h1>
+<form action="/pred/" method="post">
+    {% csrf_token %}
+   <p>Nitrogen</p>
+   <p><input type="text" name="N"/></p>
+
+    <p>Phosphorus</p>
+   <p><input type="text" name="P"/></p>
+
+    <p>Potassium</p>
+   <p><input type="text" name="K"/></p>
+
+    <p>Temperature</p>
+   <p><input type="text" name="Temp"/></p>
+
+    <p>Humidity</p>
+   <p><input type="text" name="Hum"/></p>
+
+    <p>Ph level</p>
+   <p><input type="text" name="Ph"/></p>
+
+    <p>Rainfall level</p>
+   <p><input type="text" name="Ra"/></p>
+    <p><input type="submit" name="predict" value="Predict" style="background-color: purple; color: white;"/></p>
+</form>
+</div>
+</body>
+
+</html>
