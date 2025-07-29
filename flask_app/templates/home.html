@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.left {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+}
+
+.right {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.content a:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box left">
+            <div class="content">
+                <a  href="{{ url_for('crop') }}" target="_blank">Crop Prediction</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

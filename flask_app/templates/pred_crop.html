@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>Crop Prediction</title>
+    <style>
+        body {
+            background-image: url(https://th.bing.com/th/id/R.a282493ecfc76e9b8290dfa30c19478a?rik=9au%2fx49RL3g6mA&riu=http%3a%2f%2fmeditationsfromzion.files.wordpress.com%2f2011%2f05%2fcrops.jpg%23tl-504148867176988673%3b1043138249&ehk=VP5sGlBTlnQWYbawnjwdHW0HTf8lPaZ5iRGVUlTMNR0%3d&risl=&pid=ImgRaw&r=0); /* Replace with the actual path */
+            background-size: cover; /* Cover the entire background */
+            background-position: center center; /* Center the image */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        div.container {
+            text-align: center;
+        }
+
+        div.crop-image {
+            background-color: rgba(0, 0, 0, 0); /* Light pink background for crop image */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center; /* Center the image inside the div */
+        }
+
+        div.crop-info {
+            background-color: rgba(255, 255, 255, 0.7); /* Light green background for crop info */
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 500px;  /* Limit the width of the image */
+            height: auto;      /* Maintain aspect ratio */
+            border-radius: 10px;
+            object-fit: contain;
+            animation: rotateLeftRight 3s ease-in-out forwards;
+            animation-delay: 1s; /* Delay the rotation for 2 seconds */
+            animation-iteration-count: 3;
+            border: 5px solid white;
+        }
+
+             @keyframes rotateLeftRight {
+            0% {
+                transform: rotateY(0deg); /* Start at 0 degrees */
+            }
+            50% {
+                transform: rotateY(180deg); /* Rotate to 180 degrees */
+            }
+            100% {
+                transform: rotateY(0deg); /* Return to 0 degrees */
+            }
+        }
+        
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="crop-image">
+            <!-- Dynamically change the image source based on pcrop -->
+            {% if pcrop == "rice" %}
+                <img src="https://www.10wallpaper.com/wallpaper/1366x768/1811/Summer_growing_rice_plant_HD_photography_closeup_1366x768.jpg" alt="Rice Image">
+            {% elif pcrop == "maize" %}
+                <img src="https://www.theseedcollection.com.au/assets/full/X-043.jpg" alt="Maize Image">
+            {% elif pcrop == "chickpea" %}
+                <img src="https://www.thegardener.co.za/wp-content/uploads/2022/04/shutterstock_557148790-1.jpg" alt="Chickpea Image">
+            {% elif pcrop == "kidneybeans" %}
+                <img src="https://static.fanpage.it/wp-content/uploads/sites/22/2018/06/istock-541972824.jpg" alt="Kidney Beans Image">
+            {% elif pcrop == "pigeonpeas" %}
+                <img src="https://gardenerspath.com/wp-content/uploads/2022/02/How-to-Grow-Pigeon-Peas-Feature.jpg" alt="Pigeonpeas Image">
+            {% elif pcrop == "mothbeans" %}
+                <img src="https://static.tnfoodie.in/photo/84274415.cms" alt="Moth Beans Image">
+            {% elif pcrop == "mungbean" %}
+                <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/324/324156/mung-beans.jpg?w=1155&h=1541" alt="Mung Beans Image">
+            {% elif pcrop == "blackgram" %}
+                <img src="https://housing.com/news/wp-content/uploads/2022/10/Black-gram-or-back-mung-bean.jpg" alt="Black Gram Image">
+            {% elif pcrop == "lentil" %}
+                <img src="https://www.cook2eatwell.com/wp-content/uploads/2020/03/Lentil-Varieties-Image-1.jpg" alt="Lentil Image">
+            {% elif pcrop == "pomegranate" %}
+                <img src="https://www.savoryexperiments.com/wp-content/uploads/2020/05/pomegranate.jpg" alt="Pomegranate Image">
+            {% elif pcrop == "banana" %}
+                <img src="https://th.bing.com/th/id/OIP.0F7ne3Gkd7hNmhwEHkbrPgHaE8?rs=1&pid=ImgDetMain" alt="Banana Image">
+            {% elif pcrop == "mango" %}
+                <img src="https://image.freepik.com/free-photo/close-up-mango-fruit-mango-tree_1373-1455.jpg" alt="Mango Image">
+            {% elif pcrop == "grapes" %}
+                <img src="https://th.bing.com/th/id/R.446c924fd13b9f4885dfa645f89a1971?rik=hSndPgVz32xvFw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd2%2fGreen_Grapes_for_Poster.jpg&ehk=m%2bP5ZVktYsqDN9FNUyWxt899tso3uLqoQ7s8p8S4GC8%3d&risl=&pid=ImgRaw&r=0" alt="Grapes Image">
+            {% elif pcrop == "watermelon" %}
+                <img src="https://www.thespruce.com/thmb/ObgnFZuTAQPqixg8xGUzArS5igY=/4002x2671/filters:fill(auto,1)/how-to-grow-watermelons-1403491-hero-2d1ce0752fed4ed599db3ba3b231f8b7.jpg" alt="Watermelon Image">
+            {% elif pcrop == "muskmelon" %}
+                <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/04/Muskmelon-cover-1.jpg" alt="Muskmelon Image">
+            {% elif pcrop == "apple" %}
+                <img src="https://static.agcanada.com/wp-content/uploads/sites/5/2018/11/apple_GettyImages186843005_cmyk.jpg" alt="Apple Image">
+            {% elif pcrop == "orange" %}
+                <img src="https://www.lifeberrys.com/img/article/calcium-foods-3-1658137342-lb.jpg" alt="Orange Image">
+            {% elif pcrop == "papaya" %}
+                <img src="https://www.thespruceeats.com/thmb/PPYSyTlY2_ISOwuQXnL5xlVPDfY=/1500x1035/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-914617584-3db6c4fb1f314e688b9593c83cf0a2dc.jpg" alt="Papaya Image">
+            {% elif pcrop == "coconut" %}
+                <img src="https://www.plantsnap.com/wp-content/uploads/2021/01/shutterstock_1539138173.jpg" alt="Coconut Image">
+            {% elif pcrop == "cotton" %}
+                <img src="https://indiaforyou.in/wp-content/uploads/2020/11/cotton.jpg" alt="Cotton Image">
+            {% elif pcrop == "jute" %}
+                <img src="https://www.treehugger.com/thmb/VI8Q-C7LJr2zppp5Sm4mAiaCV2U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/jute-field-in-savar-in-dhaka--bangladesh-1020563338-7cfcddd6e63b489da1ed81479332ec11.jpg" alt="Jute Image">
+            {% else %}
+                <img src="https://www.thespruceeats.com/thmb/ZbvlJnjhpI_o36ESDxY4X9_qR6k=/2121x1414/filters:fill(auto,1)/Roasted-coffee-beans-5831e5d35f9b58d5b1c85fa7.jpg" alt="Default Image">
+            {% endif %}
+        </div>
+        <div class="crop-info">
+            <h1>It is best to cultivate {{ pcrop }} in this environment</h1>
+        </div>
+
+
+    </div>
+
+    </div>
+
+</body>
+
+</html>
